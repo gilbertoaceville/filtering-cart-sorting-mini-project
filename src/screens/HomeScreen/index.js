@@ -112,8 +112,8 @@ function HomeScreen() {
     >
       <div className={homeScreen}>
         {/* RETURN FEATURED DATA */}
-        {products
-          .filter((item) => item?.featured)
+        {(products.length > 0 ? products : PRODUCTS)
+          .filter((item) => item.featured)
           .map((item, index) => {
             return <ProductDetails key={index} item={item} />;
           })}

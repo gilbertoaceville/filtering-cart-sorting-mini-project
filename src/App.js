@@ -1,11 +1,21 @@
-import loadable from "@loadable/component";
 import React, { Fragment } from "react";
+import Loadable from "react-loadable";
 import { useSelector } from "react-redux";
 import "./App.css";
 import Backdrop from "./components/backdrop/backdrop";
-import HomeScreen from "./screens/HomeScreen";
 
-const NavBar = loadable(()=> import("./components/navigation"));
+const HomeScreen = Loadable({
+  loader: () => import("./screens/HomeScreen"),
+  loading() {
+    return <div>Loading...</div>
+  }
+});
+const NavBar = Loadable({
+  loader: () => import("./components/navigation"),
+  loading() {
+    return <div></div>
+  }
+});
 function App() {
   const backdropState = useSelector((state) => state.backdrop);
   const { backdrop } = backdropState;
