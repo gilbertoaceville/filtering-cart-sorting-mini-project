@@ -1,0 +1,109 @@
+.category {
+  /* background-color: red; */
+  padding: 10px 0;
+  position: relative;
+}
+
+.categories_container {
+  margin-bottom: 20px;
+}
+
+.categories:nth-child(1) .category_wrapper .categories_container {
+  border-bottom: 2px solid #cccccc;
+}
+
+.category > .category_wrapper > header > h4 {
+  font-size: 16px;
+  line-height: 25px;
+  color: #000000;
+}
+
+.categories_media_header {
+  display: none;
+}
+
+.categories {
+  position: relative;
+}
+
+.category_btn {
+  padding: 10px 0;
+  background-color: #ffffff;
+  position: absolute;
+  box-shadow: 0 1px 1px #aaaaaa;
+  bottom: 0;
+  width: 100%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2em;
+  display: none;
+}
+
+.category_btn button {
+  padding: 0.2em 0;
+}
+
+/* SingleCategory Attributes */
+
+.form_input_container {
+  display: flex;
+  align-items: center;
+  margin: 1em 0 2em;
+  cursor: pointer;
+}
+
+.form_input_container > input {
+  height: 15px;
+  width: 15px;
+  cursor: pointer;
+}
+
+.form_input_container > input[type="radio"] {
+  outline: none;
+}
+
+.form_input_container > p {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1d1d1d;
+  margin-left: 10px;
+  text-transform: capitalize;
+}
+
+/* SingleCategory Attributes */
+
+@media (max-width: 519px) {
+  .category_wrapper {
+    padding: 0 20px;
+  }
+
+  .category > .category_wrapper > header > h4 {
+    font-size: 20px;
+    line-height: 45px;
+  }
+
+  .category_btn {
+    display: grid;
+  }
+
+  /* SingleCategory Attributes */
+  .form_input_container {
+    padding: 0.5rem 0;
+  }
+
+  .form_input_container > input {
+    height: 19px;
+    width: 19px;
+    outline: 2px solid #000000;
+    border: none;
+  }
+
+  .form_input_container > p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 321px) {
+  .category_btn {
+    bottom: unset;
+  }
+}

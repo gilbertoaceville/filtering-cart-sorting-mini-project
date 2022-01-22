@@ -1,0 +1,237 @@
+.container {
+  padding: 3rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container > header > h2 > span {
+  color: #9b9b9b;
+}
+
+.container > header > .product_sort_container {
+  position: relative;
+}
+
+.product_sort_container > ul {
+  cursor: pointer;
+  display: flex;
+}
+
+.product_sort_container > ul > li {
+  font-size: 20px;
+  color: #9b9b9b;
+}
+
+.product_sort_container .price_sort {
+  color: #000000;
+  margin-left: 10px;
+}
+
+.product_sort_container > select {
+  height: fit-content;
+  padding: 0 10px;
+  height: 45px;
+  max-width: 200px;
+  background-color: #f1f1f1;
+  box-shadow: 0 1px 1px #aaaaaa;
+  position: absolute;
+  right: 0;
+  top: 30px;
+  outline: none;
+  box-shadow: 0 1px 3.5px #aaaaaa;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.product_sort_container > select > option {
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: gray;
+  cursor: pointer;
+}
+
+.filter__icons {
+  display: none;
+}
+
+/* Product Category Styles */
+.product_category {
+  margin-top: 3em;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  justify-content: center;
+}
+
+.category {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  z-index: 60;
+}
+
+.categories_media_header,
+.category_btn {
+  display: none;
+}
+
+.product_list_wrapper {
+  position: relative;
+}
+
+.product_list_wrap, .product_list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(282.02px, 1fr));
+  justify-content: center;
+  align-self: center;
+}
+
+.feedback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* PAGINATION */
+.pagination_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+}
+
+.pagination {
+  margin: 15px auto;
+  display: flex;
+  list-style: none;
+  outline: none;
+}
+
+.pagination > .active > a {
+  color: #000000;
+  font-size: 22px;
+}
+.pagination > li > a {
+  border: none;
+  padding: 0px 10px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  /* background-color: #47ccde; */
+  border-color: none;
+  outline: none;
+  color: #000000;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: #b4b4b4;
+}
+
+.pagination i {
+  color: #000000;
+}
+
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-radius: unset;
+}
+
+.body_toggler {
+  position: fixed;
+  width: 100%;
+}
+
+@media (max-width: 750px) {
+  .product_category {
+    display: flex;
+    justify-content: center;
+  }
+
+  .category {
+    display: block;
+  }
+
+  .product_list_wrap,
+  .product_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container > header > h2,
+  .product_sort_container > ul > li {
+    font-size: 20px;
+  }
+
+  .product_sort_container > ul {
+    display: none;
+  }
+
+  .filter__icons {
+    display: block;
+  }
+
+  /* Product Category */
+  .category {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    /* overflow: scroll; */
+    height: 95%;
+    transform: translateY(0);
+    transition: all 0.3s ease-out;
+    z-index: 200;
+    right: 0;
+    left: 0;
+  }
+
+  /* add dragCategory to body */
+  .dragCategory .category {
+    transform: translateY(100%);
+  }
+
+  .categories_media_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .categories_media_header > i {
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .category_container {
+    overflow-y: scroll;
+    height: 85%;
+  }
+
+  .container > header > h2,
+  .product_sort_container > ul > li {
+    font-size: 12px;
+  }
+
+  .pagination_container {
+    height: 100px;
+  }
+}
