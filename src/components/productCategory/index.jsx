@@ -132,7 +132,7 @@ export function ProductCategory({
     product_list,
     dragCategory,
     body_toggler,
-    category_container
+    category_container,
   } = classes;
 
   const dispatch = useDispatch();
@@ -218,17 +218,14 @@ export function ProductCategory({
         <div className={product_list_wrap}>
           <div className={product_list_wrapper}>
             <ul className={product_list}>
-              {current.currentItems && current.currentItems.length ? (
-                current.currentItems.map((item) => (
-                  <li key={Math.random().toString()}>
-                    <Product item={item} />
-                  </li>
-                ))
-              ) : (
-                <li className={classes.feedback}>
-                  <h2>{text}</h2>
+              {(current.currentItems && current.currentItems.length > 0
+                ? current.currentItems
+                : Products
+              ).map((item) => (
+                <li key={Math.random().toString()}>
+                  <Product item={item} />
                 </li>
-              )}
+              ))}
             </ul>
           </div>
         </div>
