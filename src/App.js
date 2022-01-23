@@ -3,6 +3,7 @@ import Loadable from "react-loadable";
 import { useSelector } from "react-redux";
 import "./App.css";
 import Backdrop from "./components/backdrop/backdrop";
+import ErrorBoundary from "./components/error";
 import Loader from "./components/loader/loader";
 
 const HomeScreen = Loadable({
@@ -17,6 +18,7 @@ const NavBar = Loadable({
     return <div></div>;
   },
 });
+
 function App() {
   const backdropState = useSelector((state) => state.backdrop);
   const { backdrop } = backdropState;
@@ -26,7 +28,9 @@ function App() {
       <NavBar />
       {backdrop && <Backdrop />}
       <main>
-        <HomeScreen />
+        <ErrorBoundary>
+          <HomeScreen />
+        </ErrorBoundary>
       </main>
     </Fragment>
   );
