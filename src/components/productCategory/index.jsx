@@ -39,15 +39,6 @@ export function ProductCategory({
   // toggle sort list card
   const [toggle, setToggle] = useReducer((state) => !state, true);
 
-  const [text, setText] = useState("");
-
-  // display text after 3 secs
-  const checkData = () => {
-    setTimeout(() => {
-      setText("No Products Found");
-    }, 3000);
-  };
-
   //mobile screen
   let isMobile = useResize();
 
@@ -162,10 +153,6 @@ export function ProductCategory({
       document.body.classList.remove(body_toggler);
     }
   }, [toggle, body_toggler, isMobile]);
-
-  useEffect(() => {
-    checkData();
-  }, []);
 
   return (
     <div className={container}>
